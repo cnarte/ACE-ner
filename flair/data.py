@@ -16,7 +16,7 @@ from torch.utils.data.dataset import ConcatDataset, Subset
 from flair.file_utils import Tqdm
 
 log = logging.getLogger("flair")
-import pdb
+import pdbr
 
 class Dictionary:
     """
@@ -639,7 +639,8 @@ class Sentence(DataPoint):
                 iob2(tags)
                 tags = iob_iobes(tags)
         except:
-            pdb.set_trace()
+            # pdb.set_trace()
+            pass
 
         for index, tag in enumerate(tags):
             self.tokens[index].add_tag(tag_type, tag)

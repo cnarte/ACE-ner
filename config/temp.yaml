@@ -27,12 +27,10 @@ model_name: test-xlnet-base-cased
 ner:
   Corpus: ColumnCorpus-1
   ColumnCorpus-1: 
-    data_folder: /home/wangxy/.flair/datasets/temp_dataset
+    data_folder: coustom_connl
     column_format:
-      0: text
-      1: pos
-      2: chunk
-      3: ner
+      0: -DOCSTART-
+      1: -X-
     tag_to_bioes: ner
   tag_dictionary: ner_tags_harem.pkl
 target_dir: resources/taggers/
