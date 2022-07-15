@@ -23,14 +23,14 @@ model:
     use_crf: false
     use_rnn: false
     word_dropout: 0.1
-model_name: test-xlnet-base-cased
+model_name: bert-base-cased
 ner:
   Corpus: ColumnCorpus-1
   ColumnCorpus-1: 
     data_folder: coustom_connl
     column_format:
-      0: -DOCSTART-
-      1: -X-
+      0: text
+      1: ner
     tag_to_bioes: ner
   tag_dictionary: ner_tags_harem.pkl
 target_dir: resources/taggers/
@@ -39,12 +39,12 @@ train:
   embeddings_storage_mode: none
   fine_tune_mode: true
   gradient_accumulation_steps: 4
-  learning_rate: 5.0e-06
+  learning_rate: 5.0e-04
   lr_rate: 10000
-  max_epochs: 10
+  max_epochs: 1
   mini_batch_size: 4
-  monitor_test: false
-  save_final_model: false
+  monitor_test: true
+  save_final_model: true
   save_finetuned_embedding: true
   train_with_dev: false
   true_reshuffle: false

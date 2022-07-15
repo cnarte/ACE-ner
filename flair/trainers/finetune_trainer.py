@@ -687,7 +687,7 @@ class ModelFinetuner(ModelDistiller):
 							pass
 					except Exception:
 						traceback.print_exc()
-						pdb.set_trace()
+						# pdb.set_trace()
 					# pdb.set_trace()
 					# print(self.model.linear.weight.sum())
 					train_loss += loss.item()
